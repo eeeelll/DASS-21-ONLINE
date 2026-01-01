@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <title>DASS-21 Online</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- PDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>DASS-21 Online</h1>
+
+    <label>Nama</label>
+    <input type="text" id="nama">
+
+    <label>Umur</label>
+    <input type="number" id="umur">
+
+    <label>Tarikh</label>
+    <input type="date" id="tarikh">
+
+    <label>Jantina</label>
+    <select id="jantina">
+      <option value="">Pilih</option>
+      <option>Lelaki</option>
+      <option>Perempuan</option>
+    </select>
+
+    <p><b>Demo berjaya 🎉</b></p>
+    <p>Kalau kau nampak page ni, GitHub Pages dah OK.</p>
+
+    <button onclick="exportPDF()">Test Export PDF</button>
+
+    <div id="keputusan">
+      <h3>Contoh Keputusan</h3>
+      <p>Stress: 10 (Sederhana)</p>
+      <p>Anxiety: 8 (Sederhana)</p>
+      <p>Depression: 6 (Ringan)</p>
+    </div>
+  </div>
+
+<script>
+function exportPDF(){
+  html2pdf().from(document.getElementById("keputusan")).save("dass-test.pdf");
+}
+</script>
+
+</body>
+</html>
